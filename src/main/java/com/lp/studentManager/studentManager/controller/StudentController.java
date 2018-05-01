@@ -1,6 +1,7 @@
 package com.lp.studentManager.studentManager.controller;
 
 import com.lp.studentManager.studentManager.Entity.StudentBO;
+import com.lp.studentManager.studentManager.Entity.StudentDTO;
 import com.lp.studentManager.studentManager.repository.StudentRepositeri;
 import com.lp.studentManager.studentManager.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +18,9 @@ public class StudentController {
     @Autowired
     StudentRepositeri studentRepositeri;
     @RequestMapping(method = RequestMethod.GET)
-    List<StudentBO> getAll(){
-//        return studentService.getAll();
-        return studentRepositeri.findAll();
+    List<StudentDTO> getAll(){
+        return studentService.getAll();
+//        return studentRepositeri.findAll();
     }
     @RequestMapping(value = "getByID",method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE)
     StudentBO getByID(@RequestBody Integer id){
