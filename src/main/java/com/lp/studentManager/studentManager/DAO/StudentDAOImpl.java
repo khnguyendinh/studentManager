@@ -22,9 +22,6 @@ import java.util.List;
 
 @Repository
 public class StudentDAOImpl implements StudentDAO {
-    protected EntityManager em;
-    Statement st;
-
     @Override
     public List<StudentDTO> getAll() {
 //        List<StudentBO> studentBOS = new ArrayList<>();
